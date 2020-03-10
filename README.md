@@ -12,7 +12,7 @@ Source and target directories need to be mounted as volumes. In order to gain ac
       -v /var/lib/mysql:/var/lib/mysql \
       -v /nfs/xtrabackup:/target \
       -v $PWD/.my.cnf:/root/.my.cnf \
-      --network host freinet/xtrabackup:2.4.18-1
+      --network host wolpert/xtrabackup:2.4.18-1
 
 ### Create a new backup
 
@@ -20,7 +20,7 @@ Source and target directories need to be mounted as volumes. In order to gain ac
       -v /var/lib/mysql:/var/lib/mysql \
       -v /nfs/xtrabackup:/target \
       -v $PWD/.my.cnf:/root/.my.cnf \
-      --network host freinet/xtrabackup:2.4.18-1 --no-version-check \
+      --network host wolpert/xtrabackup:2.4.18-1 --no-version-check \
       --datadir=/var/lib/mysql \
       --target-dir=/target \
       --backup --safe-slave-backup
@@ -31,7 +31,7 @@ Source and target directories need to be mounted as volumes. In order to gain ac
       -v /var/lib/mysql:/var/lib/mysql \
       -v /nfs/xtrabackup:/target \
       -v $PWD/.my.cnf:/root/.my.cnf \
-      --network host freinet/xtrabackup:2.4.18-1 --no-version-check \
+      --network host wolpert/xtrabackup:2.4.18-1 --no-version-check \
       --datadir=/var/lib/mysql \
       --target-dir=/target \
       --prepare
@@ -41,10 +41,10 @@ Source and target directories need to be mounted as volumes. In order to gain ac
     docker run --rm \
       -v /var/lib/mysql:/var/lib/mysql \
       -v /nfs/xtrabackup:/target \
-      freinet/xtrabackup:2.4.18-1 \
+      wolpert/xtrabackup:2.4.18-1 \
       --help
 
 ## Build and push the docker image
 
-docker build -t freinet/xtrabackup:2.4.18-1 .
-docker push freinet/xtrabackup:2.4.18-1
+    docker build -t wolpert/xtrabackup:2.4.18-1 .
+    docker push wolpert/xtrabackup:2.4.18-1
